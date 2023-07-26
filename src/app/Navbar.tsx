@@ -10,8 +10,9 @@ import Link from "next/link";
 export const Navbar = () => {
   const [show, setShow] = useState(false);
   return (
-    <div className="h-full w-3/5">
+    <div className="flex flex-col h-full">
       <Transition
+        className={"self-end"}
         appear={true}
         show={!show}
         enterFrom="scale-0"
@@ -30,7 +31,7 @@ export const Navbar = () => {
       </Transition>
       <Transition
         appear={false}
-        className="text-white lg:h-fit backdrop-blur-xl lg:min-w-fit lg:backdrop-blur-3xl pt-10 lg:py-10 h-full right-0 z-10"
+        className="text-white lg:h-fit backdrop-blur-xl lg:min-w-fit absolute  lg:backdrop-blur-3xl py-10 h-full right-0 z-10"
         show={show}
         enterFrom="w-0 lg:scale-x-0"
         enterTo="w-3/5 lg:scale-x-100"
@@ -39,27 +40,27 @@ export const Navbar = () => {
         leaveFrom="w-3/5"
         leaveTo="w-0"
       >
-        <div className="flex flex-col min-w-fit gap-12">
+        <div className="flex flex-col  gap-12">
           <Image
-            className="self-end lg:hidden mr-20 cursor-pointer"
+            className="self-end lg:hidden cursor-pointer"
             src={closeIcon}
             onClick={() => setShow(false)}
             alt="A close icon for the navbar"
           ></Image>
-          <div className="flex flex-col gap-8 lg:flex-row tracking-widest">
-            <Link className="px-12 flex gap-8" href={"/"}>
+          <div className="flex px-10 flex-col gap-8 lg:gap-20 lg:flex-row tracking-widest">
+            <Link className="flex gap-8" href={"/"}>
               <p className="text-lg font-bold font-barlow_cond lg:hidden">00</p>{" "}
               <p className="text-lg font-barlow_cond">HOME</p>
             </Link>
-            <Link className="px-12  flex gap-8" href={"/destinations"}>
+            <Link className="flex gap-8" href={"/destinations"}>
               <p className="text-lg font-bold font-barlow_cond lg:hidden">01</p>{" "}
               <p className="text-lg font-barlow_cond">DESTINATION</p>
             </Link>
-            <Link className="px-12 flex gap-8" href={"#"}>
+            <Link className="flex gap-8" href={"#"}>
               <p className="text-lg font-bold font-barlow_cond lg:hidden">02</p>{" "}
               <p className="text-lg font-barlow_cond">CREW</p>
             </Link>
-            <Link className="px-12 flex gap-8" href={"#"}>
+            <Link className="flex gap-8" href={"#"}>
               <p className="text-lg font-bold font-barlow_cond lg:hidden">03</p>{" "}
               <p className="text-lg font-barlow_cond">TECHNOLOGY</p>
             </Link>

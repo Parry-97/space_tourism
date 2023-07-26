@@ -40,9 +40,9 @@ export default function RootLayout({
       lang="en"
       className={`h-full ${bellefair.variable} ${barlow.variable} ${barlow_condensed.variable}`}
     >
-      <body className={`overflow-hidden relative h-full`}>
-        <nav className="absolute flex items-start h-full justify-between z-10 w-full mx-10">
-          <Image className="py-8" src={logo} alt="A logo representing a star" />
+      <body className={`relative h-full w-full`}>
+        <nav className="px-8 pt-8 absolute flex items-start h-full justify-between z-10 w-full">
+          <Image src={logo} alt="A logo representing a star" />
           <Navbar />
         </nav>
         <main className="flex-grow w-full h-full">{children}</main>
