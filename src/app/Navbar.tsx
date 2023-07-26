@@ -23,7 +23,7 @@ export const Navbar = () => {
         leaveTo="scale-100"
       >
         <Image
-          className="cursor-pointer"
+          className="py-6 cursor-pointer"
           src={hamburger}
           onClick={() => setShow(true)}
           alt="A hamburger icon for the navbar"
