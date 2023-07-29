@@ -1,6 +1,6 @@
 import Image from "next/image";
 import "./globals.css";
-import logo from "../../starter-code/assets/shared/logo.svg";
+import logo from "/assets/shared/logo.svg";
 import { Bellefair, Barlow_Condensed, Barlow } from "next/font/google";
 import { Navbar } from "./Navbar";
 
@@ -42,7 +42,14 @@ export default function RootLayout({
     >
       <body className={`relative h-full w-full`}>
         <nav className="px-8 absolute flex items-start h-full justify-between z-10 w-full">
-          <Image className="py-6" src={logo} alt="A logo representing a star" />
+          <Image
+            priority={true}
+            className="py-6"
+            src="/assets/shared/logo.svg"
+            width="48"
+            height="48"
+            alt="A logo representing a star"
+          />
           <Navbar />
         </nav>
         <main className="flex-grow w-full h-full">{children}</main>

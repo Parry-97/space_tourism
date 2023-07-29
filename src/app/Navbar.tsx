@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import hamburger from "../../starter-code/assets/shared/icon-hamburger.svg";
-import closeIcon from "../../starter-code/assets/shared/icon-close.svg";
+import hamburger from "./assets/shared/icon-hamburger.svg";
+import closeIcon from "./assets/shared/icon-close.svg";
 
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
@@ -23,8 +23,10 @@ export const Navbar = () => {
         leaveTo="scale-100"
       >
         <Image
-          className="py-6 cursor-pointer"
-          src={hamburger}
+          className="py-[30px] cursor-pointer"
+          src="./assets/shared/icon-hamburger.svg"
+          width="24"
+          height="21"
           onClick={() => setShow(true)}
           alt="A hamburger icon for the navbar"
         />
@@ -40,10 +42,12 @@ export const Navbar = () => {
         leaveFrom="w-3/5"
         leaveTo="w-0"
       >
-        <div className="flex flex-col  gap-12">
+        <div className="flex flex-col px-10 gap-12">
           <Image
             className="self-end lg:hidden cursor-pointer"
-            src={closeIcon}
+            src="./assets/shared/icon-close.svg"
+            width="20"
+            height="21"
             onClick={() => setShow(false)}
             alt="A close icon for the navbar"
           ></Image>

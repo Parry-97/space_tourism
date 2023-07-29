@@ -1,9 +1,6 @@
-import Image from "next/image";
-import homeBackground from "../../starter-code/assets/home/background-home-mobile.jpg";
-
 export default function Home() {
   return (
-    <div className="h-full bg-cover bg-[url('../../starter-code/assets/home/background-home-mobile.jpg')] md:bg-[url('../../starter-code/assets/home/background-home-tablet.jpg')] lg:bg-[url('../../starter-code/assets/home/background-home-desktop.jpg')]">
+    <div className="h-full bg-cover bg-[url('/assets/home/background-home-mobile.jpg')] md:bg-[url('/assets/home/background-home-tablet.jpg')] lg:bg-[url('/assets/home/background-home-desktop.jpg')]">
       <div className="h-full grid lg:grid-flow-col justify-items-center items-center gap-8 grid-flow-row text-white">
         <div>
           <h1 className="md:text-xl text-center lg:text-2xl lg:text-left font-barlow_cond tracking-widest">

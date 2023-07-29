@@ -1,14 +1,11 @@
-import React from "react";
+import { DestinationType, fetchDestinationData } from "../utils";
+import Destination from "./Destination";
 
-export default function Destination() {
+export default async function Page() {
+  const data = await fetchDestinationData();
   return (
-    <div>
-      <h1 className="text-7xl">Mars</h1>
-      <p className="w-1/3">
-        Don't forget to pack your hiking boots. You’ll need them to tackle
-        Olympus Mons, the tallest planetary mountain in our solar system. It’s
-        two and a half times the size of Everest!
-      </p>
+    <div className="h-full justify-center pt-32 pb-16 flex flex-col bg-cover bg-[url('/assets/destination/background-destination-mobile.jpg')] md:bg-[url('/assets/destination/background-destination-tablet.jpg')] lg:bg-[url('/assets/destination/background-destination-desktop.jpg')]">
+      <Destination destinationData={data} />
     </div>
   );
 }
