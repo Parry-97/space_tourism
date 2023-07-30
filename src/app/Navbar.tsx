@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import hamburger from "./assets/shared/icon-hamburger.svg";
-import closeIcon from "./assets/shared/icon-close.svg";
 
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
@@ -24,7 +22,7 @@ export const Navbar = () => {
       >
         <Image
           className="py-[30px] cursor-pointer"
-          src="./assets/shared/icon-hamburger.svg"
+          src="/assets/shared/icon-hamburger.svg"
           width="24"
           height="21"
           onClick={() => setShow(true)}
@@ -36,16 +34,16 @@ export const Navbar = () => {
         className="text-white lg:h-fit backdrop-blur-xl lg:min-w-fit absolute  lg:backdrop-blur-3xl py-10 h-full right-0 z-10"
         show={show}
         enterFrom="w-0 lg:scale-x-0"
-        enterTo="w-3/5 lg:scale-x-100"
+        enterTo="w-4/5 lg:scale-x-100"
         enter="transition-all ease-in-out duration-500"
         leave="transition-all ease-in-out duration-500"
-        leaveFrom="w-3/5"
+        leaveFrom="w-4/5"
         leaveTo="w-0"
       >
-        <div className="flex flex-col px-10 gap-12">
+        <div className="flex flex-col pr-10 gap-12">
           <Image
             className="self-end lg:hidden cursor-pointer"
-            src="./assets/shared/icon-close.svg"
+            src="/assets/shared/icon-close.svg"
             width="20"
             height="21"
             onClick={() => setShow(false)}

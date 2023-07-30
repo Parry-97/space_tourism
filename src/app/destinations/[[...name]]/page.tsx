@@ -1,29 +1,18 @@
-"use client";
-import React, { useState } from "react";
-import { DestinationOptions, DestinationType } from "../utils";
+import { fetchDestinationData } from "@/app/utils";
 import Image from "next/image";
 
-export default function Destination({
-  destinationData,
-}: {
-  destinationData: DestinationType[];
-}) {
-  const [currentDestination, setCurrentDestination] =
-    useState<DestinationOptions>("Moon");
+export default async function Page({ params }: { params: { name: string[] } }) {
+  let { name } = params;
 
-  const data =
-    destinationData.find(
-      (destination) => destination.name === currentDestination
-    ) ?? destinationData[0];
+  if (!name) {
+    name = ["Moon"];
+  }
 
+  const data = await fetchDestinationData(name[0]);
   return (
     <div className="flex flex-col h-auto justify-between lg:gap-24 gap-8">
-      <div className="text-white text-xl lg:text-3xl tracking-widest md:pl-24 md:self-start flex gap-8 justify-center">
-        <p className="font-bold font-barlow_cond opacity-25">01</p>{" "}
-        <p className="font-barlow_cond">PICK YOUR DESTINATION</p>
-      </div>
       <div className="flex flex-col lg:flex-row justify-around items-center gap-8 mx-auto w-11/12 ">
-        <div className="relative w-1/2 sm:w-2/5 max-w-sm h-auto">
+        <div className="relative w-1/3 max-w-sm h-auto">
           <Image
             priority
             className="object-cover w-full h-auto"
