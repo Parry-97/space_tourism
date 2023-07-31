@@ -10,7 +10,7 @@ export const Navbar = () => {
   return (
     <div className="flex flex-col h-full">
       <Transition
-        className={"self-end"}
+        className={"self-end pointer-events-auto"}
         appear={true}
         show={!show}
         enterFrom="scale-0"
@@ -31,7 +31,9 @@ export const Navbar = () => {
       </Transition>
       <Transition
         appear={false}
-        className="text-white lg:h-fit backdrop-blur-xl lg:min-w-fit absolute  lg:backdrop-blur-3xl py-10 h-full right-0 z-10"
+        className={`${
+          !show ? "pointer-events-none" : "pointer-events-auto"
+        } text-white pointer-events-auto lg:h-fit backdrop-blur-xl lg:min-w-fit absolute  lg:backdrop-blur-3xl py-10 h-full right-0 z-10`}
         show={show}
         enterFrom="w-0 lg:scale-x-0"
         enterTo="w-4/5 lg:scale-x-100"
@@ -49,7 +51,7 @@ export const Navbar = () => {
             onClick={() => setShow(false)}
             alt="A close icon for the navbar"
           ></Image>
-          <div className="flex px-10 flex-col gap-8 lg:gap-20 lg:flex-row tracking-widest">
+          <div className="pointer-events-auto flex px-10 flex-col gap-8 lg:gap-20 lg:flex-row tracking-widest">
             <Link className="flex gap-8" href={"/"}>
               <p className="text-lg font-bold font-barlow_cond lg:hidden">00</p>{" "}
               <p className="text-lg font-barlow_cond">HOME</p>

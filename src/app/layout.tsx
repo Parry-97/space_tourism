@@ -1,6 +1,5 @@
 import Image from "next/image";
 import "./globals.css";
-import logo from "/assets/shared/logo.svg";
 import { Bellefair, Barlow_Condensed, Barlow } from "next/font/google";
 import { Navbar } from "./Navbar";
 
@@ -41,7 +40,7 @@ export default function RootLayout({
       className={`h-full ${bellefair.variable} ${barlow.variable} ${barlow_condensed.variable}`}
     >
       <body className={`relative h-full w-full`}>
-        <nav className="px-8 absolute flex items-start h-full justify-between z-10 w-full">
+        <nav className="px-8 absolute flex items-start pointer-events-none h-full justify-between z-10 w-full">
           <Image
             priority={true}
             className="py-6"

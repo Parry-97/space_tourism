@@ -1,11 +1,12 @@
 import { fetchDestinationData } from "@/app/utils";
 import Image from "next/image";
+import { DestinationSelector } from "./DestinationSelector";
 
 export default async function Page({ params }: { params: { name: string[] } }) {
   let { name } = params;
 
   if (!name) {
-    name = ["Moon"];
+    name = ["moon"];
   }
 
   const data = await fetchDestinationData(name[0]);
@@ -23,11 +24,12 @@ export default async function Page({ params }: { params: { name: string[] } }) {
           />
         </div>
         <div className="flex flex-col gap-8 items-center">
+          <DestinationSelector />
           <div className="text-white text-center">
-            <h1 className="text-6xl md:text-[80px] lg:text-8xl lg:text-left font-bellefair">
+            <h1 className="text-6xl md:text-[80px] lg:text-[100px] lg:text-left font-bellefair">
               {data.name.toUpperCase()}
             </h1>
-            <p className="max-w-lg text-center lg:text-left font-barlow text-[#D0D6F9] text-lg leading-6">
+            <p className="max-w-lg text-center lg:text-left font-barlow text-[#D0D6F9] lg:text-lg leading-6">
               {data.description}
             </p>
           </div>

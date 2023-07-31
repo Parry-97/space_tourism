@@ -40,5 +40,9 @@ export async function fetchDestinationData(
 ): Promise<DestinationType> {
   const response = await fetch(`${process.env.DB_HOST}/destinations`);
   const data: DestinationType[] = await response.json();
-  return data.find((destination) => destination.name === name) ?? data[0];
+  return (
+    data.find(
+      (destination) => destination.name.toLowerCase() === name.toLowerCase()
+    ) ?? data[0]
+  );
 }
