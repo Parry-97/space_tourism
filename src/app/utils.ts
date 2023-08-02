@@ -47,6 +47,14 @@ export async function fetchDestinationData(
   );
 }
 
+export async function fetchTechnologyData(
+  index: number
+): Promise<TechnologyType> {
+  const response = await fetch(`${process.env.DB_HOST}/technology`);
+  const data: TechnologyType[] = await response.json();
+  return data[index] ?? data[0];
+}
+
 export async function fetchCrewData(index: number): Promise<CrewMemberType> {
   const response = await fetch(`${process.env.DB_HOST}/crew`);
   const data: CrewMemberType[] = await response.json();

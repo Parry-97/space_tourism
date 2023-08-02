@@ -64,7 +64,7 @@ export const Navbar = () => {
               <p className="text-lg font-bold font-barlow_cond lg:hidden">02</p>{" "}
               <p className="text-lg font-barlow_cond">CREW</p>
             </Link>
-            <Link className="flex gap-8" href={"#"}>
+            <Link className="flex gap-8" href={"/technology"}>
               <p className="text-lg font-bold font-barlow_cond lg:hidden">03</p>{" "}
               <p className="text-lg font-barlow_cond">TECHNOLOGY</p>
             </Link>
