@@ -43,10 +43,10 @@ export default function RootLayout({
         <nav className="px-8 absolute flex items-start pointer-events-none h-full justify-between z-10 w-full">
           <Image
             priority={true}
-            className="py-6"
+            className="mt-8 max-md:w-[40px] max-md:h-[40px]"
             src="/assets/shared/logo.svg"
-            width="48"
-            height="48"
+            width={48}
+            height={48}
             alt="A logo representing a star"
           />
           <Navbar />
