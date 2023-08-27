@@ -16,11 +16,9 @@ export default function Home() {
             world experience!
           </article>
         </div>
-        <div className="rounded-full bg-white flex justify-center w-36 md:w-52 md:h-52 lg:w-[274px] h-36 lg:h-[274px]">
-          <button className="font-bellefair mx-auto text-black md:text-3xl text-xl">
-            EXPLORE
-          </button>
-        </div>
+        <button className="box-content w-[150px] h-[150px] md:w-[242px] md:h-[242px] lg:w-[274px] lg:h-[274px] bg-white rounded-full font-bellefair md:text-3xl text-xl text-black hover:border-[80px] border-opacity-5 transition-all ease-in-out duration-300">
+          EXPLORE
+        </button>
       </div>
     </div>
   );

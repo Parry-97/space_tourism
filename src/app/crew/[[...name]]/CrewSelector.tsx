@@ -14,6 +14,7 @@ export const CrewSelector = ({ index }: { index: number }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <circle
+        className="hover:opacity-50"
         opacity={index != 0 ? "0.174363" : "1.0"}
         cx="7.5"
         cy="7.5"
@@ -23,6 +24,7 @@ export const CrewSelector = ({ index }: { index: number }) => {
         fill="white"
       />
       <circle
+        className="hover:opacity-50"
         opacity={index != 1 ? "0.174363" : "1.0"}
         onClick={() => router.push("/crew/1")}
         cx="46.5"
@@ -32,6 +34,7 @@ export const CrewSelector = ({ index }: { index: number }) => {
         fill="white"
       />
       <circle
+        className="hover:opacity-50"
         opacity={index != 2 ? "0.174363" : "1.0"}
         onClick={() => router.push("/crew/2")}
         cx="85.5"
@@ -41,6 +44,7 @@ export const CrewSelector = ({ index }: { index: number }) => {
         fill="white"
       />
       <circle
+        className="hover:opacity-50"
         opacity={index != 3 ? "0.174363" : "1.0"}
         cx="124.5"
         cursor={"pointer"}
