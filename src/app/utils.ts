@@ -1,3 +1,5 @@
+import { readFile } from "fs/promises";
+
 export type DestinationOptions = "Moon" | "Mars" | "Europa" | "Titan";
 export type DestinationType = {
   name: DestinationOptions;
@@ -38,25 +40,29 @@ export type TData = {
 export async function fetchDestinationData(
   name: string
 ): Promise<DestinationType> {
-  const response = await fetch(`${process.env.DB_HOST}/destinations`);
-  const data: DestinationType[] = await response.json();
-  return (
-    data.find(
-      (destination) => destination.name.toLowerCase() === name.toLowerCase()
-    ) ?? data[0]
-  );
+  const response = await readFile("src/app/data.json", "utf-8");
+  const fulldata: TData = await JSON.parse(response);
+  const data: DestinationType[] = fulldata.destinations;
+  let destination: DestinationType = name
+    ? data.find((dest) => dest.name.toLowerCase() == name) ?? data[0]
+    : data[0];
+  return destination;
 }
 
 export async function fetchTechnologyData(
   index: number
 ): Promise<TechnologyType> {
-  const response = await fetch(`${process.env.DB_HOST}/technology`);
-  const data: TechnologyType[] = await response.json();
-  return data[index] ?? data[0];
+  const response = await readFile("src/app/data.json", "utf-8");
+  const fulldata: TData = await JSON.parse(response);
+  const data: TechnologyType[] = fulldata.technology;
+  let technology: TechnologyType = index ? data[index] : data[0];
+  return technology;
 }
 
 export async function fetchCrewData(index: number): Promise<CrewMemberType> {
-  const response = await fetch(`${process.env.DB_HOST}/crew`);
-  const data: CrewMemberType[] = await response.json();
-  return data[index] ?? data[0];
+  const response = await readFile("src/app/data.json", "utf-8");
+  const fulldata: TData = await JSON.parse(response);
+  const data: CrewMemberType[] = fulldata.crew;
+  let crewMember: CrewMemberType = index ? data[index] : data[0];
+  return crewMember;
 }
