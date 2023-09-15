@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: "/space_tourism",
 };
 
 module.exports = nextConfig;
