@@ -40,7 +40,7 @@ export type TData = {
 export async function fetchDestinationData(
   name: string
 ): Promise<DestinationType> {
-  const response = await readFile("src/app/data.json", "utf-8");
+  const response = await readFile("public/data.json", "utf-8");
   const fulldata: TData = await JSON.parse(response);
   const data: DestinationType[] = fulldata.destinations;
   let destination: DestinationType = name
@@ -52,7 +52,7 @@ export async function fetchDestinationData(
 export async function fetchTechnologyData(
   index: number
 ): Promise<TechnologyType> {
-  const response = await readFile("src/app/data.json", "utf-8");
+  const response = await readFile("public/data.json", "utf-8");
   const fulldata: TData = await JSON.parse(response);
   const data: TechnologyType[] = fulldata.technology;
   let technology: TechnologyType = index ? data[index] : data[0];
@@ -60,7 +60,7 @@ export async function fetchTechnologyData(
 }
 
 export async function fetchCrewData(index: number): Promise<CrewMemberType> {
-  const response = await readFile("src/app/data.json", "utf-8");
+  const response = await readFile("public/data.json", "utf-8");
   const fulldata: TData = await JSON.parse(response);
   const data: CrewMemberType[] = fulldata.crew;
   let crewMember: CrewMemberType = index ? data[index] : data[0];
