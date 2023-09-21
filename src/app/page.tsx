@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="h-full bg-cover bg-[url('/assets/home/background-home-mobile.jpg')] md:bg-[url('/assets/home/background-home-tablet.jpg')] lg:bg-[url('/assets/home/background-home-desktop.jpg')]">
@@ -16,9 +18,11 @@ export default function Home() {
             world experience!
           </article>
         </div>
-        <button className="box-content w-[150px] h-[150px] md:w-[242px] md:h-[242px] lg:w-[274px] lg:h-[274px] bg-white rounded-full font-bellefair md:text-3xl text-xl text-black hover:border-[80px] border-opacity-5 transition-all ease-in-out duration-300">
-          EXPLORE
-        </button>
+        <Link href={"/destinations"}>
+          <button className="box-content w-[150px] h-[150px] md:w-[242px] md:h-[242px] lg:w-[274px] lg:h-[274px] bg-white rounded-full font-bellefair md:text-3xl text-xl text-black lg:hover:border-[80px] border-[rgba(0, 0, 0, 0.25)]  transition-all ease-in-out duration-300">
+            EXPLORE
+          </button>
+        </Link>
       </div>
     </div>
   );
